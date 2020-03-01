@@ -16,7 +16,7 @@ namespace AcmeVending
             Console.WriteLine("----------------------------------------------------------------");
             Console.WriteLine("To view supported currency press V, press C to continue with transaction or press Q to quit. ");
 
-            StartTransactionOrViewCurrency(Console.ReadLine());
+            StartTransactionOrViewCurrency(Console.ReadLine().ToUpper());
             SelectCurrencyOrQuit();
             
             // Get tendered amount  
@@ -39,7 +39,7 @@ namespace AcmeVending
             while (transactionNotStarted)
             {
                 
-                char option = char.Parse(whatNext);
+                char option = char.Parse(string.IsNullOrEmpty(whatNext) ? "z" : whatNext);
 
                 switch (option)
                 {
@@ -62,7 +62,7 @@ namespace AcmeVending
                         Console.WriteLine("Invalid input. Please try again.");
                         transactionNotStarted = true;
                         Console.WriteLine("To view supported currency press V, press C to continue with transaction or press Q to quit. ");
-                        whatNext = Console.ReadLine();
+                        whatNext = Console.ReadLine().ToUpper();
                         break;
                 }
             }
@@ -75,7 +75,7 @@ namespace AcmeVending
 
             while (invalidInput)
             {
-                string currencySelected = Console.ReadLine();
+                string currencySelected = Console.ReadLine().ToUpper();
                 char option = char.Parse(currencySelected);
 
                 switch (option)
