@@ -61,7 +61,7 @@ namespace ChangeMachine
         }
     }
     //mmmmm
-    public enum MachineCurrency
+    public enum AllowedCurrency
     {
         [Description("United States Dollar : $")]
         USD = 1,
