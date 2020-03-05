@@ -21,12 +21,18 @@ namespace AcmeVending
             
             // Get tendered amount  
             Console.Write("Tendered Amount: ");
-            var tender = Console.ReadLine();
+            //To handle error
+            var tender = Convert.ToDecimal(Console.ReadLine());
 
             //Utilize ChangeMachine library to calculate change requirements
 
 
             Console.WriteLine("Calculaing......Calculating......");
+
+            // EG usa coins
+            var allowedCoins = new MachineCurrency();
+            Console.WriteLine(string.Format("${0}: {1}", tender, new CoinContainer(tender, allowedCoins.usaCoins)));
+
             Console.WriteLine("Thank you and enjoy your day. :-)");
             Console.Write("Press any key to complete this transaction.");
             Console.ReadKey(true);

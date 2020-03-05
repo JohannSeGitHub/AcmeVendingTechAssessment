@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ChangeMachine
 {
-    class MachineCurrency
+    public class MachineCurrency
     {
         //Playing between 2 coin batches. This class list verion and then a the struct version in MachineCurrencyStructures
-        List<Coin> usaCoins = new List<Coin>
+        public List<Coin> usaCoins = new List<Coin>
         {
             new Coin("USD","quarter",0.25m),
             new Coin("USD","dime",0.10m),
@@ -15,7 +15,7 @@ namespace ChangeMachine
             new Coin("USD","penny",0.01m )
         };
 
-        List<Coin> britishCoins = new List<Coin>
+        public List<Coin> britishCoins = new List<Coin>
         {
             new Coin("GBR","two pound",2.00m),
             new Coin("GBR","pound",1.00m),
